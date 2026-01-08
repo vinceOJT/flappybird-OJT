@@ -21,6 +21,7 @@ var player = {
     "s": 0,
     "state": "start",
     "img": "",
+
 }
 
 var p_sound = new Audio("audio/point.mp3");
@@ -31,33 +32,56 @@ var p_img = {
     "b-2": "",
 }
 
+
+
+var choice = 5;
+var player_initial;
+var player_fly;
+
+
+
+
+
+
+if (choice === 1) {
+    player_initial = "images/14.png";
+    player_fly = "images/07.png";
+} else if (choice === 2) {
+    player_initial = "images/1.png";
+    player_fly = "images/2.png";
+} else {
+    player_initial = "images/11.png";
+    player_fly = "images/22.png";
+}
+
 let tmpImg = new Image();
-tmpImg.src = "images/1.png";
+tmpImg.src = player_initial;
 
 tmpImg.onload = () => {
     p_img["b-1"] = tmpImg;
 
     tmpImg = new Image();
-    tmpImg.src = "images/2.png";
+    tmpImg.src = player_fly;
 
     tmpImg.onload = () => {
         p_img["b-2"] = tmpImg;
     }
 }
-
 // let tmpImg = new Image();
-// tmpImg.src = "images/14.png";
+// tmpImg.src = "images/1.png";
 
 // tmpImg.onload = () => {
 //     p_img["b-1"] = tmpImg;
 
 //     tmpImg = new Image();
-//     tmpImg.src = "images/07.png";
+//     tmpImg.src = "images/2.png";
 
 //     tmpImg.onload = () => {
 //         p_img["b-2"] = tmpImg;
 //     }
 // }
+
+
 
 
 
@@ -169,7 +193,6 @@ function check_allow_config(i = 0) {
 function game_start(sk = 0) {
 
     let pn = document.getElementById("playername").value;
-
     if (!pn) {
         alert("Please input name");
         return;
