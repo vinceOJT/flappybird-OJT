@@ -11,10 +11,10 @@ function check_admin_pw() {
         r_data['pw'] = pw;
 
         $.ajax({
-            url : "api/world_fx.php",
-            type : "post",
-            data : r_data,
-            success : (res) => {
+            url: "api/world_fx.php",
+            type: "post",
+            data: r_data,
+            success: (res) => {
                 res = JSON.parse(res);
                 if (res['access']) {
                     get_scores();
@@ -22,7 +22,7 @@ function check_admin_pw() {
                 } else {
                     check_admin_pw();
                 }
-                
+
             }
         })
     } else {
@@ -32,8 +32,8 @@ function check_admin_pw() {
 
 function start_timer(t = 0, m = 0) {
 
-    if (m == 0) { 
-        m = 1500; 
+    if (m == 0) {
+        m = 1500;
         hide_display('start_timer');
     }
     if (t >= m) {
@@ -52,7 +52,7 @@ function start_timer(t = 0, m = 0) {
     let secs = tme[1] ? Math.round(parseFloat("." + tme[1]) * 60).toFixed(0) : 0;
     tmr.innerText = mins + ":" + secs + " Time Left";
 
-    setTimeout( () => {
+    setTimeout(() => {
         t++;
         return start_timer(t, m);
     }, 1000);
@@ -70,7 +70,7 @@ function screen_adjustment() {
 
 
     let lg = document.getElementById("left_graphs");
-            
+
     if (lg.offsetWidth >= 400) {
         document.getElementById("2").width = 400;
         document.getElementById("a").width = 400;
@@ -81,7 +81,7 @@ function screen_adjustment() {
     }
 
     let rg = document.getElementById("right_graphs");
-    
+
     if (rg.offsetWidth >= 400) {
         document.getElementById("b").width = 400;
     } else {
@@ -98,17 +98,17 @@ function get_scores() {
     r_data['cmd'] = "get_scores";
 
     $.ajax({
-        url : "api/world_fx.php",
-        type : "post",
-        data : r_data,
-        success : (res) => {
+        url: "api/world_fx.php",
+        type: "post",
+        data: r_data,
+        success: (res) => {
             // console.log(JSON.parse(res));
             create_table_view(JSON.parse(res));
-            setTimeout( () => {
+            setTimeout(() => {
                 get_scores();
             }, 1000);
         }
-    }) 
+    })
 
 
 }
@@ -123,13 +123,13 @@ function reset_scores() {
     r_data['cmd'] = "reset_scores";
 
     $.ajax({
-        url : "api/world_fx.php",
-        type : "post",
-        data : r_data,
-        success : () => {
+        url: "api/world_fx.php",
+        type: "post",
+        data: r_data,
+        success: () => {
             alert("Scoreboard Resetted");
         }
-    }) 
+    })
 
 }
 
@@ -142,11 +142,11 @@ function grant_game_access(ag = 0) {
         r_data['cmd'] = "disallow_game";
     }
     $.ajax({
-        url : "api/world_fx.php",
-        type : "post",
-        data : r_data,
-        success : () => {
-            
+        url: "api/world_fx.php",
+        type: "post",
+        data: r_data,
+        success: () => {
+
             if (ag) {
                 alert("Game Access Allowed");
             } else {
@@ -172,9 +172,9 @@ function create_table_view(data) {
     }
     tbl.appendChild(h);
 
-    
+
     let b = document.createElement("tbody");
-    
+
     for (let i = 0; i < data.length; i++) {
         let tr = document.createElement("tr");
 
@@ -194,7 +194,7 @@ function create_table_view(data) {
 
             tdr.appendChild(fa);
         }
-        
+
         tr.appendChild(tdr);
 
         for (let k in data[i]) {

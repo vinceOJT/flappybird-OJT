@@ -1,20 +1,23 @@
 <html>
+
 <head>
     <title>Flappy Bird</title>
 </head>
 <!-- background: url('images/edi_dont.gif');background-size: 100% 100%;background-repeat: no-repeat; -->
+
 <body class="container-fluid" style="margin-left: 0px;margin-right: 0px;">
-    
+
     <div class="col-sm-12 mt-2" style="height: 180px;max-height: 180px;">
-    <div class="row">
-        <div class="col-sm-3">
+        <div class="row">
+            <div class="col-sm-3">
 
-            <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
-                <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;">Player Information</div>
-                <div class="card-body" style="background-color: #ffff;">
+                <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
+                    <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;">Player Information
+                    </div>
+                    <div class="card-body" style="background-color: #ffff;">
 
-                    <div style="display: block;margin-right: auto;margin-left: auto;max-width: 300px;">
-                    <!-- <div class="form-group row" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+                        <div style="display: block;margin-right: auto;margin-left: auto;max-width: 300px;">
+                            <!-- <div class="form-group row" style="border: 1px solid rgba(0, 0, 0, 0.125);">
                         <label for="playername" class="col-sm-5 col-form-label" style="text-align: right;">Name : </label>
                         <div class="col-sm-7">
                             <input type="text" class="form-control" id="playername" value="" style="border: none;background-color: #FECD9A;" placeholder="Player Name">
@@ -22,36 +25,53 @@
                     </div> -->
 
 
-                    <div class="input-group input-group-sm">
-                        <div class="input-group-prepend" style="border: none;">
-                            <div class="input-group-text" style="background-color: #FECD9A;border: none;border-radius: 0px;font-weight: bolder;">Name : </div>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend" style="border: none;">
+                                    <div class="input-group-text"
+                                        style="background-color: #FECD9A;border: none;border-radius: 0px;font-weight: bolder;">
+                                        Name : </div>
+                                </div>
+                                <input id="playername" type="text" class="form-control form-control-sm"
+                                    style="border: none;background-color: #FECD9A;border-radius: 0px;"
+                                    placeholder="Player Name">
+                            </div>
+
+                            <div style="text-align: right;">
+                                <button id="start_btn" class="btn btn-sm btn-primary btn-block mt-1 px-5"
+                                    style="width: 100%;" onclick="game_start()">Play</button>
+                                <div id="playing_status" class="btn btn-sm btn-success mt-1" style="display: none;">
+                                    Playing...</div>
+                            </div>
                         </div>
-                        <input  id="playername" type="text" class="form-control form-control-sm" style="border: none;background-color: #FECD9A;border-radius: 0px;" placeholder="Player Name">
-                    </div>
 
-                    <div style="text-align: right;">
-                        <button id="start_btn" class="btn btn-sm btn-primary btn-block mt-1 px-5" style="width: 100%;" onclick="game_start()">Play</button>    
-                        <div id="playing_status" class="btn btn-sm btn-success mt-1" style="display: none;">Playing...</div>
                     </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
+                    <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;text-align: center;">
+                        Score
                     </div>
-                    
+                    <div class="card-body" style="background-color: #ffff;">
+                        <div id="player_score" style="display: block;text-align: center;font-size: 47px;color: gold;">0
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-        </div>
-
-        <div class="col-sm-3">
-            <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
-                <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;text-align: center;">
-                    Score
-                </div>
-                <div class="card-body" style="background-color: #ffff;">
-                    <div id="player_score" style="display: block;text-align: center;font-size: 47px;color: gold;">0</div>
+            <div class="col-sm-3">
+                <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
+                    <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;text-align: center;">
+                        Top score
+                    </div>
+                    <div class="card-body" style="background-color: #ffff;">
+                        <div id="scoreboard" style="display: block;text-align: center;font-size: 47px;color: gold;">0
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-    </div>
     </div>
     <!-- background: url('images/edi_dont.gif') -->
     <!-- style="display:none;background: url('images/edi_dont.gif');background-size: 100% 100%;background-repeat: no-repeat;border: 5px solid black;" -->
@@ -70,6 +90,8 @@
 <script src="dist/jquery-3.6.0.min.js"></script>
 
 <script src="js/main.js"></script>
+<script src="js/topscores.js"></script>
+
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 
 </html>
