@@ -28,7 +28,7 @@ var p_sound = new Audio("audio/point.mp3");
 var d_sound = new Audio("audio/die.mp3");
 var fly_sound = new Audio("audio/vine.mp3");
 
-
+// const instance = fly_sound.cloneNode();
 var p_img = {
     "b-1": "",
     "b-2": "",
@@ -163,7 +163,9 @@ window.addEventListener("keydown", (e) => {
 
     if (player.state === "start") {
         if (e.code === "Space") {
-            fly_sound.play();
+            const instance = fly_sound.cloneNode();
+            instance.play()
+
 
             // if (!player.kp) { 
             //     player.f = 0;
@@ -172,6 +174,11 @@ window.addEventListener("keydown", (e) => {
             player.f = 1;
             player.kp = false;
             fly();
+        }
+        else if (e.code === "KeyD") {
+            player.f = 1;
+            player.kp = false;
+            dash();
         }
     }
 
@@ -182,6 +189,9 @@ window.addEventListener("keyup", (e) => {
 
     if (player.state === "start") {
         if (e.code === "Space") {
+            player.f = 0;
+            player.kp = true;
+        } else if (e.code === "KeyD") {
             player.f = 0;
             player.kp = true;
         }
@@ -717,6 +727,16 @@ function fly() {
 
 }
 
+function dash() {
+
+    player.x = player.x + 10 + (parseInt(player.px) - parseInt(player.ff));
+
+    player.g = player.dg;
+    player.f = 0;
+    player.img = p_img["b-2"];
+
+}
+
 function update(gt = 0, lt = 0) {
 
     if (gt >= (250 - player.g > 150 ? 250 - player.g : 50) && player.f != 1) {
@@ -797,7 +817,8 @@ function check_collision() {
     if (sr >= 0) {
         player.s = player.s + 1;
         world_parameters.grid_level.splice(sr, 1);
-        p_sound.play();
+        const instance = p_sound.cloneNode();
+        instance.play()
     }
 
 
