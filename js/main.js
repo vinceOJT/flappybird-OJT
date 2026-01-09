@@ -26,6 +26,8 @@ var player = {
 
 var p_sound = new Audio("audio/point.mp3");
 var d_sound = new Audio("audio/die.mp3");
+var fly_sound = new Audio("audio/vine.mp3");
+
 
 var p_img = {
     "b-1": "",
@@ -57,7 +59,11 @@ function takeInput() {
     } else if (choice === 2) {
         player_initial = "images/1.png";
         player_fly = "images/2.png";
-    } else {
+    } else if (choice === 3) {
+        player_initial = "images/burger.png";
+        player_fly = "images/chaddest.png";
+    }
+    else {
         player_initial = "images/11.png";
         player_fly = "images/22.png";
     }
@@ -157,6 +163,8 @@ window.addEventListener("keydown", (e) => {
 
     if (player.state === "start") {
         if (e.code === "Space") {
+            fly_sound.play();
+
             // if (!player.kp) { 
             //     player.f = 0;
             //     return; 
@@ -702,6 +710,7 @@ function camera_movement() {
 function fly() {
 
     player.y = player.y - (parseInt(player.px) - parseInt(player.ff));
+
     player.g = player.dg;
     player.f = 0;
     player.img = p_img["b-2"];

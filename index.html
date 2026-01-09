@@ -22,10 +22,12 @@
 
                 </th>
                 <td>
-                    <input id="playername" type="text" class="form-control form-control-sm input-plyaer-info"
-                        style="border: none;border-radius: 0px;" placeholder="Player Name">
-                    <input id="choose_player" type="text" class="form-control form-control-sm input-plyaer-info"
-                        style="border: none;border-radius: 0px;" placeholder="Select character">
+                    <input maxlength="5" id="playername" type="text"
+                        class="form-control form-control-sm input-plyaer-info" style="border: none;border-radius: 0px;"
+                        placeholder="Player Name">
+                    <input maxlength="1" id="choose_player" type="text"
+                        class="form-control form-control-sm input-plyaer-info" style="border: none;border-radius: 0px;"
+                        placeholder="Select character">
                     <div style="text-align: right;">
                         <button id="start_btn" class="btn btn-sm btn-custom-color btn-block mt-1 px-5"
                             style="width: 100%;" onclick="game_start()">Play</button>
@@ -34,11 +36,14 @@
                     </div>
                     <img src="images/07.png" height="60" width="80" alt="Italian Trulli"> 1
                     <img src="images/1.png" alt="Italian Trulli"> 2
-                    <img src="images/11.png" alt="Italian Trulli"> 3
+                    <img src="images/burger.png" alt="Italian Trulli"> 3
+
+                    <img src="images/11.png" alt="Italian Trulli"> 4
                 </td>
                 <td>
                     <div id="player_score" class="score-text-color"
                         style="display: block;text-align: center;font-size: 47px;">
+                        0
                     </div>
                 </td>
                 <td>
