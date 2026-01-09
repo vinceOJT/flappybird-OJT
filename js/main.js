@@ -34,39 +34,52 @@ var p_img = {
 
 
 
-var choice = 5;
+var choice;
 var player_initial;
 var player_fly;
 
 
-
-
-
-
-if (choice === 1) {
-    player_initial = "images/14.png";
-    player_fly = "images/07.png";
-} else if (choice === 2) {
-    player_initial = "images/1.png";
-    player_fly = "images/2.png";
-} else {
-    player_initial = "images/11.png";
-    player_fly = "images/22.png";
-}
-
-let tmpImg = new Image();
-tmpImg.src = player_initial;
-
-tmpImg.onload = () => {
-    p_img["b-1"] = tmpImg;
-
-    tmpImg = new Image();
-    tmpImg.src = player_fly;
-
-    tmpImg.onload = () => {
-        p_img["b-2"] = tmpImg;
+function takeInput() {
+    let character_choice = document.getElementById('choose_player');
+    const chosent_character = character_choice.value;
+    console.log("Pick a character [1,2,3]: ", chosent_character);
+    const parse_value = parseInt(chosent_character);
+    choice = parse_value;
+    console.log("number", choice);
+    if (choice === 1) {
+        player_initial = "images/14.png";
+        player_fly = "images/07.png";
+    } else if (choice === 2) {
+        player_initial = "images/1.png";
+        player_fly = "images/2.png";
+    } else {
+        player_initial = "images/11.png";
+        player_fly = "images/22.png";
     }
+
 }
+
+
+// load in chosen image
+function loadImage(url) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+
+    });
+}
+
+//wait for the player to choose the character before loading them
+async function setCharacter() {
+    p_img["b-1"] = await loadImage(player_initial);
+    p_img["b-2"] = await loadImage(player_fly);
+
+
+}
+
+
 // let tmpImg = new Image();
 // tmpImg.src = "images/1.png";
 
@@ -187,14 +200,22 @@ function check_allow_config(i = 0) {
 
 }
 
+;
 
+async function game_start(sk = 0) {
+    // let character_choice = document.getElementById('choose_player').value;
+    // const chosent_character = character_choice;
+    // console.log("Pick a character [1,2,3]: ", chosent_character);
+    // const parse_value = parseInt(chosent_character);
+    // choice = parse_value;
 
-
-function game_start(sk = 0) {
+    takeInput();
+    await setCharacter()
 
     let pn = document.getElementById("playername").value;
+
     if (!pn) {
-        alert("Please input name");
+        alert("Please input name and character");
         return;
     }
 
