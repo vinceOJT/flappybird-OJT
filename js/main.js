@@ -35,11 +35,18 @@ var p_img = {
 }
 
 
-
+let redirect = false;
 var choice;
 var player_initial;
 var player_fly;
+function redirectToWebsite(url) {
+    if (redirect == true) {
+        window.location.href = url;
 
+    } else {
+
+    }
+}
 
 function takeInput() {
     let character_choice = document.getElementById('choose_player').value;
@@ -86,8 +93,6 @@ function loadImage(url) {
 async function setCharacter() {
     p_img["b-1"] = await loadImage(player_initial);
     p_img["b-2"] = await loadImage(player_fly);
-
-
 }
 
 
@@ -162,7 +167,7 @@ document.getElementById("player_canvas").addEventListener("mouseup", (e) => {
 window.addEventListener("keydown", (e) => {
 
     if (player.state === "start") {
-        if (e.code === "Space") {
+        if (e.code === "Space" || e.code === "ArrowUp") {
             const instance = fly_sound.cloneNode();
             instance.play()
 
@@ -175,7 +180,7 @@ window.addEventListener("keydown", (e) => {
             player.kp = false;
             fly();
         }
-        else if (e.code === "KeyD") {
+        else if (e.code === "KeyD" || e.code === "ArrowRight") {
             player.f = 1;
             player.kp = false;
             dash();
@@ -759,6 +764,7 @@ function update(gt = 0, lt = 0) {
     if (player.state === "game_over") {
         // Record High Score
         d_sound.play();
+        redirectToWebsite("http://192.168.70.205/crossyroad2/")
         let r_data = {};
         r_data["name"] = document.getElementById("playername").value;
         r_data['cmd'] = "update_score";
@@ -775,7 +781,7 @@ function update(gt = 0, lt = 0) {
                     if (confirm("Game Over (Score is recorded), wanna play again?")) {
                         game_start(1);
                     } else {
-                        document.getElementById("start_btn").style.display = "block";
+                        document.getElementById("start_btn").style.display = "block ";
                         document.getElementById("playing_status").style.display = "none";
                     }
                 }, 100)

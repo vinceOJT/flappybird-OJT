@@ -1,5 +1,5 @@
 body {
-    background: url('../images/background.png');
+    background: url('../images/betterbg.png');
     background-size: 150%;
     background-position-x: center;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@ body {
 }
 
 .gold {
-    color : #FFBE38
+    color: #FFBE38
 }
 
 .friyay {
@@ -36,6 +36,7 @@ th {
     text-align: center;
     font-size: 26px;
 }
+
 td {
     border: 2px solid #1712ba;
     white-space: nowrap;
