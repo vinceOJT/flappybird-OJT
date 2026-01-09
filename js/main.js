@@ -63,16 +63,24 @@ function takeInput() {
     if (choice === 1) {
         player_initial = "images/14.png";
         player_fly = "images/07.png";
+        fly_sound = new Audio("audio/fire-whoosh.mp3");
+
     } else if (choice === 2) {
         player_initial = "images/1.png";
         player_fly = "images/2.png";
+        fly_sound = new Audio("audio/flap.mp3");
+
     } else if (choice === 3) {
         player_initial = "images/burger.png";
         player_fly = "images/chaddest.png";
+        fly_sound = new Audio("audio/vine.mp3");
+
     }
     else {
         player_initial = "images/11.png";
         player_fly = "images/22.png";
+        fly_sound = new Audio("audio/bee-buzz.mp3");
+
     }
 
 }
@@ -359,7 +367,7 @@ function create_world_graphics(data) {
     id = "player_canvas";
     let pc = document.getElementById(id);
     pc.width = cc.offsetWidth;
-    pc.height = c.height;
+    pc.height = c.height + 100;
 
     // pc.style.width = c.style.width;
     // pc.style.maxWidth = c.style.width;
