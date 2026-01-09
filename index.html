@@ -6,23 +6,65 @@
 <!-- background: url('images/edi_dont.gif');background-size: 100% 100%;background-repeat: no-repeat; -->
 
 <body class="container-fluid" style="margin-left: 0px;margin-right: 0px;">
+    <table class="table custom-table ">
+        <thead>
+            <tr>
+                <th scope="col" style="align-items: center;">
+                </th>
+                <th scope="col">Set Up Player:</th>
+                <th scope="col">Current Score:</th>
+                <th scope="col">Top Scorers:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
 
-    <div class="col-sm-12 mt-2" style="height: 180px;max-height: 180px;">
+                </th>
+                <td>
+                    <input id="playername" type="text" class="form-control form-control-sm input-plyaer-info"
+                        style="border: none;border-radius: 0px;" placeholder="Player Name">
+                    <input id="choose_player" type="text" class="form-control form-control-sm input-plyaer-info"
+                        style="border: none;border-radius: 0px;" placeholder="Select character">
+                    <div style="text-align: right;">
+                        <button id="start_btn" class="btn btn-sm btn-custom-color btn-block mt-1 px-5"
+                            style="width: 100%;" onclick="game_start()">Play</button>
+                        <div id="playing_status" class="btn btn-sm btn-success mt-1" style="display: none;">
+                            Playing...</div>
+                    </div>
+                    <img src="images/07.png" height="60" width="80" alt="Italian Trulli"> 1
+                    <img src="images/1.png" alt="Italian Trulli"> 2
+                    <img src="images/11.png" alt="Italian Trulli"> 3
+                </td>
+                <td>
+                    <div id="player_score" class="score-text-color"
+                        style="display: block;text-align: center;font-size: 47px;">0
+                    </div>
+                </td>
+                <td>
+                    <div id="scoreboard" class="score-text-color"
+                        style="display: block;text-align: center;font-size: 30px;">0
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <!-- <div class="col-sm-12 mt-2" style="height: 180px;max-height: 180px;">
         <div class="row">
             <div class="col-sm-3">
 
                 <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
                     <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;">Player Information
+
+
+
                     </div>
+
                     <div class="card-body" style="background-color: #ffff;">
 
-                        <div style="display: block;margin-right: auto;margin-left: auto;max-width: 300px;">
-                            <!-- <div class="form-group row" style="border: 1px solid rgba(0, 0, 0, 0.125);">
-                        <label for="playername" class="col-sm-5 col-form-label" style="text-align: right;">Name : </label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" id="playername" value="" style="border: none;background-color: #FECD9A;" placeholder="Player Name">
-                        </div>
-                    </div> -->
+                        <div style="display: block;margin-right: auto;margin-left: auto;max-width: 400px;">
+
 
 
                             <div class="input-group input-group-sm">
@@ -53,6 +95,7 @@
                                 <div id="playing_status" class="btn btn-sm btn-success mt-1" style="display: none;">
                                     Playing...</div>
                             </div>
+
                         </div>
 
                     </div>
@@ -60,7 +103,7 @@
 
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
                     <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;text-align: center;">
                         Score
@@ -71,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="card" style="border: 1px solid #673300;border-radius: 0px;">
                     <div class="card-header" style="background-color: #FECD9A;border-radius: 0px;text-align: center;">
                         Top score
@@ -83,7 +126,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- background: url('images/edi_dont.gif') -->
     <!-- style="display:none;background: url('images/edi_dont.gif');background-size: 100% 100%;background-repeat: no-repeat;border: 5px solid black;" -->
     <div class="col-sm-12" id="canvas_cont" style="display: none;">

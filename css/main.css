@@ -1,6 +1,6 @@
 body {
-    background-color: rgba(0,0,0,0.725);
-    
+    background-color: rgba(0, 0, 0, 0.725);
+
 }
 
 div {
@@ -24,7 +24,7 @@ div {
     /* max-width: 600px;
     width: 600px; */
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,1);
+    border: 1px solid rgba(0, 0, 0, 1);
     /* box-shadow: 0px 0px 10px white; */
     background-color: white;
     /* border-radius: 5px; */
@@ -59,4 +59,29 @@ div {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+.custom-table {
+    background-color: #126ab8;
+    /* Your custom color */
+    color: #fafafa;
+    /* Text color */
+}
+
+.btn-custom-color {
+    background-color: #ffffff;
+    /* Your desired background color */
+    border-color: #f7f7f7;
+    /* Your desired border color */
+    color: #070000;
+    /* Text color */
+}
+
+.input-plyaer-info {
+    background-color: #ffffff;
+
+}
+
+.score-text-color {
+    color: #f7f7f7;
 }
