@@ -76,6 +76,12 @@ function takeInput() {
         fly_sound = new Audio("audio/vine.mp3");
 
     }
+    else if (choice === 4) {
+        player_initial = "images/ufo.png";
+        player_fly = "images/ufo2.png";
+        fly_sound = new Audio("audio/vine.mp3");
+
+    }
     else {
         player_initial = "images/11.png";
         player_fly = "images/22.png";
