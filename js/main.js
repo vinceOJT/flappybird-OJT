@@ -40,8 +40,13 @@ var player_fly;
 
 
 function takeInput() {
-    let character_choice = document.getElementById('choose_player');
-    const chosent_character = character_choice.value;
+    let character_choice = document.getElementById('choose_player').value;
+    if (!character_choice) {
+        alert("Please choose a character");
+        return;
+    }
+
+    const chosent_character = character_choice;
     console.log("Pick a character [1,2,3]: ", chosent_character);
     const parse_value = parseInt(chosent_character);
     choice = parse_value;
@@ -219,9 +224,9 @@ async function game_start(sk = 0) {
         return;
     }
 
-    if (!sk) {
-        alert("game start");
-    }
+    // if (!sk) {
+    //     alert("game start");
+    // }
 
     world_parameters = {
         "w": 400, //to be an array
