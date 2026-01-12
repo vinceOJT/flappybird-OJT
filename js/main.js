@@ -48,20 +48,29 @@ function redirectToWebsite(url) {
     }
 }
 
-
-
-
-function takeInput() {
-    let character_choice = document.getElementById('choose_player').value;
-    if (!character_choice) {
+function sendNumber(number) {
+    choice = number;
+    if (!choice) {
         alert("Please choose a character");
         return;
     }
 
-    const chosent_character = character_choice;
-    console.log("Pick a character [1,2,3]: ", chosent_character);
-    const parse_value = parseInt(chosent_character);
-    choice = parse_value;
+}
+
+
+function takeInput() {
+    // let character_choice = document.getElementById('choose_player').value;
+
+    // let character_choice = sendNumber();
+    // if (!character_choice) {
+    //     alert("Please choose a character");
+    //     return;
+    // }
+    console.log(choice);
+    // const chosent_character = character_choice;
+    // console.log("Pick a character [1,2,3]: ", chosent_character);
+    // const parse_value = parseInt(chosent_character);
+    // choice = parse_value;
     console.log("number", choice);
     if (choice === 1) {
         player_initial = "images/14.png";
@@ -265,7 +274,6 @@ async function game_start(sk = 0) {
     // console.log("Pick a character [1,2,3]: ", chosent_character);
     // const parse_value = parseInt(chosent_character);
     // choice = parse_value;
-
     takeInput();
     await setCharacter()
 
