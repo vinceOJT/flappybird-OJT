@@ -86,3 +86,11 @@ div {
 .score-text-color {
     color: #f7f7f7;
 }
+
+
+.btn.custom-highlight:focus,
+.btn.custom-highlight:active {
+    background-color: rgb(255, 191, 14) !important;
+    border-color: rgb(255, 191, 14) !important;
+    box-shadow: none !important;
+}

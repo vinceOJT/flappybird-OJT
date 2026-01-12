@@ -26,7 +26,7 @@
                     <td style="width: 33%;">
                         <div class="card bg-secondary bg-opacity-25 border-info text-white shadow">
                             <div class="card-body">
-                                <input maxlength="10" id="playername" type="text"
+                                <input maxlength="5" id="playername" type="text"
                                     class="form-control form-control-lg bg-dark text-info border-info text-center mb-2"
                                     placeholder="Enter Name">
 
@@ -39,49 +39,47 @@
                                     <div class="row g-2 d-flex justify-content-center">
                                         <div class="col-1 d-flex justify-content-center">
                                             <input id="choose_player" type="image" src="images/07.png" height="60"
-                                                width="60" class="img-fluid rounded" alt="1" onclick="sendNumber(1)" />
+                                                width="60" class="img-fluid rounded btn custom-highlight" alt="1"
+                                                onclick="sendNumber(1)" />
                                             <div class="small">1</div>
 
 
 
+
                                         </div>
                                         <div class="col-1 d-flex justify-content-center">
-                                            <!-- <img src="images/1.png" class="img-fluid rounded" alt="2"> -->
 
                                             <input id="choose_player" type="image" src="images/1.png" height="60"
-                                                width="60" class="img-fluid rounded" alt="2" onclick="sendNumber(2)" />
+                                                width="60" class="img-fluid rounded btn custom-highlight" alt="2"
+                                                onclick="sendNumber(2)" />
                                             <div class="small">2</div>
                                         </div>
                                         <div class="col-1 d-flex justify-content-center">
-                                            <!-- <img src="images/burger.png" class="img-fluid rounded" alt="3"> -->
 
                                             <input id="choose_player" type="image" src="images/burger.png" height="60"
-                                                width="60" class="img-fluid rounded" alt="3" onclick="sendNumber(3)" />
-
+                                                width="60" class="img-fluid rounded btn custom-highlight" alt="3"
+                                                onclick="sendNumber(3)" />
                                             <div class="small">3</div>
                                         </div>
                                         <div class="col-1 d-flex justify-content-center">
-                                            <!-- <img src="images/ufo.png" class="img-fluid rounded" alt="4"> -->
-
                                             <input id="choose_player" type="image" src="images/ufo.png" height="60"
-                                                width="60" class="img-fluid rounded" alt="4" onclick="sendNumber(4)" />
-
+                                                width="60" class="img-fluid rounded btn custom-highlight" alt="4"
+                                                onclick="sendNumber(4)" />
                                             <div class="small">4</div>
                                         </div>
                                         <div class="col-1 d-flex justify-content-center">
-                                            <!-- <img src="images/boy.png" class="img-fluid rounded" alt="5"> -->
-
-
                                             <input id="choose_player" type="image" src="images/boy.png" height="60"
-                                                width="60" class="img-fluid rounded" alt="5" onclick="sendNumber(5)" />
+                                                width="60" class="img-fluid rounded btn custom-highlight" alt="5"
+                                                onclick="sendNumber(5)" />
 
                                             <div class="small">5</div>
                                         </div>
                                         <div class="col-1 d-flex justify-content-center">
-                                            <!-- <img src="images/11.png" class="img-fluid rounded" alt="6"> -->
+
 
                                             <input id="choose_player" type="image" src="images/11.png" height="60"
-                                                width="60" class="img-fluid rounded" alt="6" onclick="sendNumber(6)" />
+                                                width="60" class="img-fluid rounded btn custom-highlight" alt="6"
+                                                onclick="sendNumber(6)" />
 
                                             <div class="small">6</div>
                                         </div>
@@ -102,7 +100,7 @@
                     </td>
 
                     <td style="width: 5%;">
-                        <div class="card bg-dark border-success shadow" style="height: 320px;">
+                        <div class="card bg-dark border-success shadow" style="height: 250px;">
                             <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                 <h1 id="player_score" class="display-1 fw-bold text-success mb-0"
                                     style="font-family: monospace;">0</h1>
@@ -112,9 +110,9 @@
                     </td>
 
                     <td style="width: 15%;">
-                        <div class="card bg-dark border-warning shadow" style="height: 320px;">
+                        <div class="card bg-dark border-warning shadow" style="height: 250px;">
                             <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                                <h1 id="scoreboard" class="list-group list-group-flush text-warning fs-1"
+                                <h1 id="scoreboard" class="list-group list-group-flush text-warning fs-2"
                                     style="font-family: monospace;">0</h1>
                             </div>
                         </div>
