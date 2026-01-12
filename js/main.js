@@ -23,7 +23,7 @@ var player = {
     "img": "",
 
 }
-
+var b_sound = new Audio("audio/bgmusic.mp3")
 var p_sound = new Audio("audio/point.mp3");
 var d_sound = new Audio("audio/die.mp3");
 var fly_sound = new Audio("audio/vine.mp3");
@@ -47,6 +47,9 @@ function redirectToWebsite(url) {
 
     }
 }
+
+
+
 
 function takeInput() {
     let character_choice = document.getElementById('choose_player').value;
@@ -79,7 +82,13 @@ function takeInput() {
     else if (choice === 4) {
         player_initial = "images/ufo.png";
         player_fly = "images/ufo2.png";
-        fly_sound = new Audio("audio/vine.mp3");
+        fly_sound = new Audio("audio/warp.mp3");
+
+    }
+    else if (choice === 5) {
+        player_initial = "images/mal1.png";
+        player_fly = "images/mal2.png";
+        fly_sound = new Audio("audio/bossing.mp3");
 
     }
     else {
@@ -199,6 +208,12 @@ window.addEventListener("keydown", (e) => {
             player.kp = false;
             dash();
         }
+        else if (e.code === "KeyA" || e.code === "ArrowLeft") {
+            player.f = 1;
+            player.kp = false;
+            back();
+        }
+
     }
 
 
@@ -738,7 +753,7 @@ function camera_movement() {
 
 function fly() {
 
-    player.y = player.y - (parseInt(player.px) - parseInt(player.ff));
+    player.y = player.y - (parseInt(player.px) - parseInt(player.ff) - 10);
 
     player.g = player.dg;
     player.f = 0;
@@ -749,6 +764,16 @@ function fly() {
 function dash() {
 
     player.x = player.x + 10 + (parseInt(player.px) - parseInt(player.ff));
+
+    player.g = player.dg;
+    player.f = 0;
+    player.img = p_img["b-2"];
+
+}
+
+function back() {
+
+    player.x = player.x - (parseInt(player.px) - parseInt(player.ff));
 
     player.g = player.dg;
     player.f = 0;
@@ -774,6 +799,7 @@ function update(gt = 0, lt = 0) {
     camera_movement();
     check_collision()
     update_score();
+    b_sound.play();
 
     if (player.state === "game_over") {
         // Record High Score

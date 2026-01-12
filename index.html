@@ -6,7 +6,133 @@
 <!-- background: url('images/edi_dont.gif');background-size: 100% 100%;background-repeat: no-repeat; -->
 
 <body class="container-fluid" style="margin-left: 0px;margin-right: 0px;">
-    <table class="table custom-table  ">
+    <div class="container-fluid bg-dark">
+        <table class="table table-borderless align-middle">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center text-info ">
+                        <h5><i class="bi bi-controller"></i> PLAYER SETUP</h5>
+                    </th>
+                    <th scope="col" class="text-center text-success ">
+                        <h5><i class="bi bi-trophy"></i> LIVE SCORE</h5>
+                    </th>
+                    <th scope="col" class="text-center text-warning ">
+                        <h5><i class="bi bi-list-ol"></i> LEADERBOARD</h5>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 33%;">
+                        <div class="card bg-secondary bg-opacity-25 border-info text-white shadow">
+                            <div class="card-body">
+                                <input maxlength="10" id="playername" type="text"
+                                    class="form-control form-control-lg bg-dark text-info border-info text-center mb-2"
+                                    placeholder="Enter Name">
+
+                                <input maxlength="10" id="choose_player" type="text"
+                                    class="form-control form-control-lg bg-dark text-info border-info text-center mb-2"
+                                    placeholder="Enter Character">
+
+                                <div class="p-2 bg-dark rounded border border-secondary">
+                                    <p class="small text-center text-warning mb-2">SELECT CHARACTER (1-6)</p>
+                                    <div class="row g-2 d-flex justify-content-center">
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <input id="choose_player" type="image" src="images/07.png" height="60"
+                                                width="60" class="img-fluid rounded" alt="1" />
+                                            <div class="small">1</div>
+
+
+
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <!-- <img src="images/1.png" class="img-fluid rounded" alt="2"> -->
+
+                                            <input id="choose_player" type="image" src="images/1.png" height="60"
+                                                width="60" class="img-fluid rounded" alt="2" />
+
+                                            <div class="small">2</div>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <!-- <img src="images/burger.png" class="img-fluid rounded" alt="3"> -->
+
+                                            <input id="choose_player" type="image" src="images/burger.png" height="60"
+                                                width="60" class="img-fluid rounded" alt="3" />
+
+                                            <div class="small">3</div>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <!-- <img src="images/ufo.png" class="img-fluid rounded" alt="4"> -->
+
+                                            <input id="choose_player" type="image" src="images/ufo.png" height="60"
+                                                width="60" class="img-fluid rounded" alt="4" />
+
+                                            <div class="small">4</div>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <!-- <img src="images/boy.png" class="img-fluid rounded" alt="5"> -->
+
+
+                                            <input id="choose_player" type="image" src="images/boy.png" height="60"
+                                                width="60" class="img-fluid rounded" alt="5" />
+
+                                            <div class="small">5</div>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <!-- <img src="images/11.png" class="img-fluid rounded" alt="6"> -->
+
+                                            <input id="choose_player" type="image" src="images/11.png" height="60"
+                                                width="60" class="img-fluid rounded" alt="6" />
+
+                                            <div class="small">6</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button id="start_btn" class="btn btn-danger btn-lg w-100 fw-bold shadow-sm mt-3"
+                                    onclick="game_start()">
+                                    START MISSION
+                                </button>
+
+                                <div id="playing_status" class="alert alert-success mt-2 py-1 text-center"
+                                    style="display: none;">
+                                    <div class="spinner-grow spinner-grow-sm me-2"></div>PLAYING
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td style="width: 5%;">
+                        <div class="card bg-dark border-success shadow" style="height: 320px;">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <h1 id="player_score" class="display-1 fw-bold text-success mb-0"
+                                    style="font-family: monospace;">0</h1>
+                                <div class="text-success small mt-2">POINTS</div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td style="width: 15%;">
+                        <div class="card bg-dark border-warning shadow" style="height: 320px;">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <h1 id="scoreboard" class="list-group list-group-flush text-warning fs-1"
+                                    style="font-family: monospace;">0</h1>
+                            </div>
+                        </div>
+                        <!-- <div class="card bg-dark border-warning shadow" style="height: 440px;">
+                            <div class="card-body overflow-auto ">
+                                <div id="scoreboard" class="list-group list-group-flush text-warning fs-1 ">
+                                    <div class="text-center py-5 opacity-50">Empty...</div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <table class="table custom-table  ">
         <thead>
             <tr>
                 <th scope="col" style="align-items: center;">
@@ -59,7 +185,7 @@
             </tr>
 
         </tbody>
-    </table>
+    </table> -->
 
     <!-- <div class="col-sm-12 mt-2" style="height: 180px;max-height: 180px;">
         <div class="row">
