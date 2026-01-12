@@ -23,7 +23,7 @@ var player = {
     "img": "",
 
 }
-var b_sound = new Audio("audio/bgmusic.mp3")
+var b_sound = new Audio("audio/bgmusic.mp3");
 var p_sound = new Audio("audio/point.mp3");
 var d_sound = new Audio("audio/die.mp3");
 var fly_sound = new Audio("audio/vine.mp3");
